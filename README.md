@@ -149,11 +149,11 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. The core features of Node.js and Express and why they are useful.
     Node: nice to write server code in the same language as the front end - less context-switching
     Express: lightweight server, simple to set up
-1. Understand and explain the use of Middleware.
+2. Understand and explain the use of Middleware.
     Do things between the request and response and simplify the endpoints
-1. The basic principles of the REST architectural style.
+3. The basic principles of the REST architectural style.
     Easy to understand/remember/use formatting for CRUD operations
-1. Understand and explain the use of Express Routers.
+4. Understand and explain the use of Express Routers.
     lets you easily define endpoints
-1. Describe tooling used to manually test the correctness of an API.
+5. Describe tooling used to manually test the correctness of an API.
     postman lets you set API requests up and test them consistently, where HTTPie lets you test things quickly in the CLI with lots of feedback
