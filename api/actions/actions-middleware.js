@@ -18,7 +18,7 @@ function validateActionID(req, res, next){
 }
 
 function validateActionBody(req, res, next){
-    if (!req.body.description || !req.body.notes){
+    if (!req.body.description || !req.body.notes || req.body.completed === undefined){
         res.status(400).json({ message: "missing required info" });
     }
     else(
