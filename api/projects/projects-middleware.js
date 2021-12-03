@@ -17,10 +17,10 @@ function validateProjectID(req, res, next){
 }
 
 function validateProjectBody(req, res, next){
-    if (!req.body.name || !req.body.description || !req.body.completed){
+    if (!req.body.name || !req.body.description){
         res.status(400).json({ message: "missing required field" });
       }
-      else(
+    else(
         next()
       )
 }

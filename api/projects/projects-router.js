@@ -56,7 +56,7 @@ router.put('/:id', validateProjectID, validateProjectBody, (req, res) => {
 router.delete('/:id', validateProjectID, (req, res) => {
     Project.remove(req.params.id)
       .then(() => {
-        res.status(200).json(req.user)
+        res.status(204).json(req.user)
       })
       .catch(error =>{
         res.status(500).json({message: `${error}`});

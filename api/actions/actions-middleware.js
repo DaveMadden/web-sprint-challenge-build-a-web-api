@@ -18,12 +18,27 @@ function validateActionID(req, res, next){
 }
 
 function validateActionBody(req, res, next){
-    if (!req.body.project_id || !req.body.description || !req.body.notes){
+    if (!req.body.description || !req.body.notes){
         res.status(400).json({ message: "missing required info" });
-      }
-      else(
+    }
+    else(
         next()
-      )
+    )
 }
 
-module.exports = { validateActionBody, validateActionID }
+function projIsValid(req, res, next){
+    Project.get(req.body.project_id)
+        .then(response => {
+            if (!response){
+                res.status(400).json({message: "invalid project_id"})
+            }
+            else{
+                next()
+            }
+        })
+        .catch(err => {
+            console.error("error caught verifying project_id", err)
+        })
+}
+
+module.exports = { validateActionBody, validateActionID, projIsValid }
