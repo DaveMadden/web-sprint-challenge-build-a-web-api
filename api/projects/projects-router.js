@@ -37,4 +37,14 @@ router.post('/', validateProjectBody, (req, res) => {
       })
   });
 
+router.put('/:id', validateProjectID, validateProjectBody, (req, res) => {
+    Project.update(req.params.id, req.body)
+        .then(response =>{
+            res.status(200).json(response);
+        })
+        .catch(error =>{
+            res.status(500).json({message: `${error}`});
+        })
+});
+
 module.exports = router;
