@@ -19,6 +19,12 @@ function validateProjectID(req, res, next){
 
 function validateProjectBody(req, res, next){
     console.log("validate project body")
+    if (!req.body.name || !req.body.description){
+        res.status(400).json({ message: "missing required field" });
+      }
+      else(
+        next()
+      )
 }
 
 module.exports = { validateProjectID, validateProjectBody }
