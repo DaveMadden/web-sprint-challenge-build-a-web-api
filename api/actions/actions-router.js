@@ -31,4 +31,17 @@ router.get('/', (req, res) => {
       })
 });
 
+router.post('/', validateActionBody, (req, res) => {
+    //set default status to NOT completed
+    req.body.completed = 'false';
+
+    Action.insert(req.body)
+      .then(response =>{
+        res.status(201).json(response);
+      })
+      .catch(error =>{
+        res.status(500).json({message: `${error}`});
+      })
+  });
+
   module.exports = router;
