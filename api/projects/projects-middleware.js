@@ -1,7 +1,6 @@
 const Project = require('./projects-model')
 
 function validateProjectID(req, res, next){
-    console.log("validateProjID")
     Project.get(req.params.id)
         .then(response => {
             if (!response){
@@ -18,7 +17,6 @@ function validateProjectID(req, res, next){
 }
 
 function validateProjectBody(req, res, next){
-    console.log("validate project body")
     if (!req.body.name || !req.body.description){
         res.status(400).json({ message: "missing required field" });
       }
