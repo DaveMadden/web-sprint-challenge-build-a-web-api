@@ -8,7 +8,7 @@ function validateActionID(req, res, next){
                 res.status(404).json({ message: "action not found" })
             }
             else{
-                req.projID = response;
+                req.actionID = response;
                 next();
             }
         })
@@ -18,8 +18,8 @@ function validateActionID(req, res, next){
 }
 
 function validateActionBody(req, res, next){
-    if (!req.body.name || !req.body.description){
-        res.status(400).json({ message: "missing required field" });
+    if (!req.body.project_id || !req.body.description || !req.body.notes){
+        res.status(400).json({ message: "missing required info" });
       }
       else(
         next()

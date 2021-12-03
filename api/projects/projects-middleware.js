@@ -17,7 +17,7 @@ function validateProjectID(req, res, next){
 }
 
 function validateProjectBody(req, res, next){
-    if (!req.body.name || !req.body.description){
+    if (!req.body.name || !req.body.description || !req.body.completed){
         res.status(400).json({ message: "missing required field" });
       }
       else(

@@ -21,4 +21,14 @@ router.get('/', (req, res) => {
       })
   });
 
+  router.get('/:id', validateActionID, (req, res) => {
+    Action.get()
+      .then(response =>{
+        res.status(200).json(req.actionID);
+      })
+      .catch(error =>{
+        res.status(500).json({message: `${error}`});
+      })
+});
+
   module.exports = router;

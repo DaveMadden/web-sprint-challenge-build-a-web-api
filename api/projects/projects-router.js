@@ -21,7 +21,13 @@ router.get('/', (req, res) => {
   });
 
 router.get('/:id', validateProjectID, (req, res) => {
-    res.status(200).json(req.projID);
+    Project.get()
+      .then(response =>{
+        res.status(200).json(req.projID);
+      })
+      .catch(error =>{
+        res.status(500).json({message: `${error}`});
+      })
 });
 
 router.post('/', validateProjectBody, (req, res) => {
