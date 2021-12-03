@@ -31,8 +31,6 @@ router.get('/:id', validateProjectID, (req, res) => {
 });
 
 router.post('/', validateProjectBody, (req, res) => {
-    //set default status to NOT completed
-    // req.body.completed = 'false';
 
     Project.insert(req.body)
       .then(response =>{

@@ -137,17 +137,23 @@ We have provided test data for all the resources.
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `main` branch.
-- [ ] Check Codegrade before the deadline to compare its results against your local tests.
-- [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [X] Submit via Codegrade by pushing commits to your `main` branch.
+- [X] Check Codegrade before the deadline to compare its results against your local tests.
+- [X] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
+- [X] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+    Node: nice to write server code in the same language as the front end - less context-switching
+    Express: lightweight server, simple to set up
 1. Understand and explain the use of Middleware.
+    Do things between the request and response and simplify the endpoints
 1. The basic principles of the REST architectural style.
+    Easy to understand/remember/use formatting for CRUD operations
 1. Understand and explain the use of Express Routers.
+    lets you easily define endpoints
 1. Describe tooling used to manually test the correctness of an API.
+    postman lets you set API requests up and test them consistently, where HTTPie lets you test things quickly in the CLI with lots of feedback

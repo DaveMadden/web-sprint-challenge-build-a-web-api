@@ -11,9 +11,6 @@ const actionsRouter = require('./actions/actions-router');
 server.use('/api/projects', projectsRouter)
 server.use('/api/actions', actionsRouter)
 
-//global middleware here
-
-
 //base path endpoint
 server.get('/', (req, res)=>{
     res.send("<h1>this is not the API you're looking for yall </h1>")

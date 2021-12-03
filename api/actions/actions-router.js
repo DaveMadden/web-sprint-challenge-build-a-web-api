@@ -61,8 +61,7 @@ router.put('/:id', validateActionID, validateActionBody, (req, res) => {
 router.delete('/:id', validateActionID, (req, res) => {
     Action.remove(req.params.id)
       .then(() => {
-        res.status(204).json(req.user)
-        // res.status(204)
+        res.status(204).json({message: `deleted action #${req.params.id}`})
       })
       .catch(error =>{
         res.status(500).json({message: `${error}`});
